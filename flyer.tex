@@ -22,8 +22,6 @@
 
 \titleformat*{\section}{\Large\color{ffred}}
 
-
-
 %FONT Change
 %\renewcommand{\familydefault}{cmss} 
 
@@ -43,8 +41,6 @@
 \vtwotonebottom[1,6]{1cm}{0.6\paperwidth}{ffyellow}{bottomleft}{0.4\paperwidth}{ffyellow}{bottomright}
 
 \pagestyle{empty}
-
-
 
 \begin{document}
 
@@ -84,9 +80,9 @@ Du brauchst keine besonderen technischen Kenntnisse, um Teil des Netzes zu werde
 % Alternativ kannst Du bei TODO ein fertig eingerichtetes Gerät abholen, das nur noch angeschlossen werden muss.
 
 \section{1. Gerät kaufen}
-Je nach Geldbeutel und Installationsort eignen sich verschiedene Geräte. Wir empfehlen an dieser Stelle zwei Geräte, die leicht eingerichtet werden können: den \textbf{Netgear R6120} (ca. 40€) und den \textbf{Gl.iNet GL-B1300} (ca. 70€).
+Je nach Geldbeutel und Installationsort eignen sich verschiedene Geräte. Wir empfehlen an dieser Stelle zwei Geräte, die leicht eingerichtet werden können: den \textbf{TP-Link C6 v2} (ca. 40€) und den \textbf{TP-Link C60 v2} (ca. 45€).
 
-Grundsätzlich sind alle Geräte geeignet, die unter \href{https://www.weimarnetz.de/router}{https://www.weimarnetz.de/router} aufgeführt werden. Manche der dort aufgeführten Geräte gibt es in verschiedenen Hardware-Revisionen, bitte achtet beim Kauf darauf. Nicht immer werden alle Revisionen von uns unterstützt.
+Grundsätzlich sind alle Geräte geeignet, die unter \href{https://www.weimarnetz.de/category/router}{https://www.weimarnetz.de/category/router} aufgeführt werden. Manche der dortigen Geräte gibt es in verschiedenen Hardware-Revisionen. Bitte achtet beim Kauf darauf. Nicht immer werden alle Revisionen von uns unterstützt.
 
 Sobald ein passendes Gerät beschafft wurde, kann die Firmware aufgespielt werden.
 
@@ -96,14 +92,15 @@ Sobald ein passendes Gerät beschafft wurde, kann die Firmware aufgespielt werde
 
 \section{2. Firmware aufspielen}
 
-\paragraph{Netgear R6120}
+\paragraph{TP-Link C6 v2}
 \begin{enumerate}
- \item Lade zunächst die Erstinstallations-Firmware für Dein Gerät herunter: \href{https://hamburg.freifunk.net/firmware}{https://hamburg.freifunk.net/firmware}
- \item Schließe den Router ans Stromnetz an. Warte bis die Power- und die WiFi-LED durchgehend eingeschaltet sind. Verbinde jetzt den \textit{LAN-Port 2} mit dem Netzwerkanschluss des Computers.
- \item Öffne in einem Browserfenster die Adresse \textit{http://routerlogin.net} bzw. \textit{http://192.168.2.2}
- \item Klicke links oben auf \textit{Erweitert} und dann im Reiter \textit{Administration} auf \textit{Firmwareupdate}.
- \item Wähle die Freifunk-Firmware aus und klicke anschließend auf \textit{hochladen} und auf \textit{OK}.
- \item Nun warte etwa drei Minuten bis das Upgrade durchgelaufen ist. Danach kann der Knoten eingerichtet werden.
+ \item Lade Dir zunächst die Erstinstallations-Firmware für Dein Gerät herunter: \href{https://weimarnetz.de/router/archer-c6}{https://weimarnetz.de/router/archer-c6}
+ \item Schließ den Router ans Stromnetz an. Warte bis die Power- und die WiFi-LED durchgehend eingeschaltet sind.
+ \item Verbinde jetzt einen gelben Switchport mit dem Netzwerkanschluss Deines Computers und den blauen WAN-Port mit deinem Internetrouter.
+ \item Öffne in einem Browserfenster die Adresse \textit{http://192.168.0.1} und melde Dich mit \textit{admin} und dem Paßwort \textit{admin} an.
+ \item Klicke links im Menü auf \textit{System Tools} und dann im Reiter \textit{Firmware Upgrades} auf \textit{Manual Upgrade}.
+ \item Wähle die Freifunk-Firmware über den Button \textit{Browse}, die Du gerade von unserer Seite runtergeladen hast. Klicke anschließend auf \textit{Upgrade}.
+ \item Nun warte etwa bis das Upgrade durchgelaufen ist. Danach richtet sich der Knoten selbstständig ein. Dieser Vorgang kann bis zu einer Stunde dauern.
 \end{enumerate}
 
 
@@ -165,12 +162,12 @@ Bei der Nutzung herrschen die gleichen Bedingungen wie in jedem anderen WLAN: Di
 
 \newpage
 \begin{center}
-\includegraphics[width=65mm]{in-hamburg-funkt-man-frei.png}
+\includegraphics[width=65mm]{weimarnetz_logo.png}
 \end{center}
 \vspace{3em}
 \begin{center}
 \includegraphics[width=40mm]{qr.png}\\
-\footnotesize https://t1p.de/0nzq\\Dieser Flyer als PDF.
+\footnotesize https://weimarnetz.de/infoflyer
 \end{center}
 \vfill
 \section{Kontakt}
