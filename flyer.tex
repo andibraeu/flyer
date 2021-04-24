@@ -82,56 +82,54 @@ Du brauchst keine besonderen technischen Kenntnisse, um Teil des Netzes zu werde
 \section{1. Gerät kaufen}
 Je nach Geldbeutel und Installationsort eignen sich verschiedene Geräte. Wir empfehlen an dieser Stelle zwei Geräte, die leicht eingerichtet werden können: den \textbf{TP-Link C6 v2} (ca. 40€) und den \textbf{TP-Link C60 v2} (ca. 45€).
 
-Grundsätzlich sind alle Geräte geeignet, die unter \href{https://www.weimarnetz.de/category/router}{https://www.weimarnetz.de/category/router} aufgeführt werden. Manche der dortigen Geräte gibt es in verschiedenen Hardware-Revisionen. Bitte achtet beim Kauf darauf. Nicht immer werden alle Revisionen von uns unterstützt.
+Grundsätzlich sind alle Geräte geeignet, die unter\\\href{https://www.weimarnetz.de/category/router}{https://www.weimarnetz.de/category/router} aufgeführt werden. Manche der dortigen Geräte gibt es in verschiedenen Hardware-Revisionen. Bitte achtet beim Kauf darauf. Nicht immer werden alle Revisionen von uns unterstützt.
 
 Sobald ein passendes Gerät beschafft wurde, kann die Firmware aufgespielt werden.
 
-
-\newpage
-
-
 \section{2. Firmware aufspielen}
 
-\paragraph{TP-Link C6 v2}
+\paragraph{TP-Link Geräte}
 \begin{enumerate}
- \item Lade Dir zunächst die Erstinstallations-Firmware für Dein Gerät herunter: \href{https://weimarnetz.de/router/archer-c6}{https://weimarnetz.de/router/archer-c6}
+ \item Lade Dir zunächst die Erstinstallations-Firmware für Dein Gerät herunter:\\\href{https://weimarnetz.de/router/archer-c6}{https://weimarnetz.de/router/archer-c6}
  \item Schließ den Router ans Stromnetz an. Warte bis die Power- und die WiFi-LED durchgehend eingeschaltet sind.
  \item Verbinde jetzt einen gelben Switchport mit dem Netzwerkanschluss Deines Computers und den blauen WAN-Port mit deinem Internetrouter.
- \item Öffne in einem Browserfenster die Adresse \textit{http://192.168.0.1} und melde Dich mit \textit{admin} und dem Paßwort \textit{admin} an.
+ \item Öffne in einem Browserfenster die Adresse \textit{http://tplinkwifi.net/} oder \textit{http://192.168.0.1} und melde Dich mit \textit{admin} und dem Paßwort \textit{admin} an.
  \item Klicke links im Menü auf \textit{System Tools} und dann im Reiter \textit{Firmware Upgrades} auf \textit{Manual Upgrade}.
  \item Wähle die Freifunk-Firmware über den Button \textit{Browse}, die Du gerade von unserer Seite runtergeladen hast. Klicke anschließend auf \textit{Upgrade}.
- \item Nun warte etwa bis das Upgrade durchgelaufen ist. Danach richtet sich der Knoten selbstständig ein. Dieser Vorgang kann bis zu einer Stunde dauern.
+ \item Nun warte etwas bis das Upgrade durchgelaufen ist und sich der Router selbstständig neu startet.
 \end{enumerate}
 
 
-\paragraph{Gl.iNet GL-B1300}
-\begin{enumerate}
- \item Lade zunächst die Firmware für Dein Gerät herunter: \href{https://hamburg.freifunk.net/firmware}{https://hamburg.freifunk.net/firmware}
- \item Schließe den Router ans Stromnetz an. Verbinde dann den \textit{mittleren LAN-Port} mit dem Netzwerkanschluss des Computers.
- \item Öffne in einem Browserfenster die Adresse \textit{http://192.168.8.1}
- \item Wähle nun eine Sprache und vergebe ein Passwort. Klicke danach links auf \textit{Aktualisierung} und dann auf den Reiter \textit{lokales Upgrade}.
- \item Wähle die Freifunk-Firmware aus, \textbf{deaktiviere} \textit{Einstellung behalten} und klicke anschließend auf \textit{Installieren}.
- \item Nun warte etwa drei Minuten bis das Upgrade durchgelaufen ist. Danach kann der Knoten eingerichtet werden.
-\end{enumerate}
+%\paragraph{Gl.iNet GL-B1300}
+%\begin{enumerate}
+% \item Lade zunächst die Firmware für Dein Gerät herunter: \href{https://hamburg.freifunk.net/firmware}{https://hamburg.freifunk.net/firmware}
+% \item Schließe den Router ans Stromnetz an. Verbinde dann den \textit{mittleren LAN-Port} mit dem Netzwerkanschluss des Computers.
+% \item Öffne in einem Browserfenster die Adresse \textit{http://192.168.8.1}
+% \item Wähle nun eine Sprache und vergebe ein Passwort. Klicke danach links auf \textit{Aktualisierung} und dann auf den Reiter \textit{lokales Upgrade}.
+% \item Wähle die Freifunk-Firmware aus, \textbf{deaktiviere} \textit{Einstellung behalten} und klicke anschließend auf \textit{Installieren}.
+% \item Nun warte etwa drei Minuten bis das Upgrade durchgelaufen ist. Danach kann der Knoten eingerichtet werden.
+%\end{enumerate}
 
+
+%\newpage
+
+\section{3. Knoten einrichten}
+Danach richtet sich der Knoten selbstständig ein. Dieser Vorgang kann bis zu einer Stunde dauern.
+
+Damit ist die Registrierung abgeschlossen und Du kannst Deinen Freifunk-Router in Betrieb nehmen.
+
+Du solltest ein neues, offenes WLAN mit der SSID ''\mbox{\textit{Weimarnetz.Freifunk}}'' oder ''\mbox{\textit{weimarnetz.de | XXX}}'' sehen.\\
+''XXX'' steht hier für die Knotennumer Deines neuen Routers. Dieser wurde bei der Einrichtung automatisch vergeben.
+\\\\
+Teste es am besten kurz und sage dann Deinen Nachbarn Bescheid!  
+
+\begin{center}
+\includegraphics[width=20mm]{Weimarnetz.Freifunk.qr.png}\\
+\footnotesize Weimarnetz.Freifunk
+\end{center}
 
 \newpage
 
-\section{3. Knoten einrichten}
-%Bilder unter https://hamburg.freifunk.net/anleitung/router-einrichten
-Nach kurzer Wartezeit ist nun die neue Konfigurationsoberfläche unter http://192.168.1.1 erreichbar.
-
-\begin{enumerate}
- \item Gib Deinem Knoten einen Namen und klicke auf \textit{Fertig}.
- \item Klicke jetzt auf den angezeigten Link. Dann wird automatisch das Knotenformular geöffnet und ausgefüllt. Wenn Du in diesem Formular die Geo-Koordinaten Deines Routers einträgst, ist er auf der Knotenkarte zu sehen. So können alle feststellen, wo überall Freifunk verfügbar ist. Diese Angabe ist freiwillig, aber empfohlen. Bitte gib auch einen Namen und eine gültige E-Mail-Adresse an, unter der Freifunk Dich bezüglich Deines Routers kontaktieren kann.
- \item Klicke auf \textit{Knoten anmelden} und notiere den \textit{Token}.
-\end{enumerate}
-Damit ist die Registrierung abgeschlossen und Du kannst Deinen Freifunk-Router nun in Betrieb nehmen.
-
-\section{4. Knoten anschließen}
-Verbinde die \textit{WAN-Buchse} des Freifunk-Knotens mit einer freien Buchse Deines Internet-Routers. Nach wenigen Minuten sollte der Router auf der Knotenkarte \mbox{https://map.hamburg.freifunk.net/} an der von dir angegebenen Position zu sehen sein.
-
-Nun solltest Du ein neues, offenes WLAN mit der SSID \mbox{\textit{hamburg.freifunk.net}} sehen. Teste es am besten kurz und sage dann Deinen Nachbarn Bescheid!
 
 \vspace{1em}
 
@@ -139,26 +137,27 @@ Nun solltest Du ein neues, offenes WLAN mit der SSID \mbox{\textit{hamburg.freif
 \includegraphics[width=40mm]{weimarnetz_logo.png}
 \end{center}
 
-
-
-
 \newpage
 \section{Häufige Fragen}
 \setlength{\parskip}{0.1em}
-\paragraph{Wo stehen schon Freifunk-Router?} Eine Karte findest Du unter \href{https://map.hamburg.freifunk.net}{https://map.hamburg.freifunk.net}.
+\paragraph{Wo stehen schon Freifunk-Router?}
+Eine Karte findest Du unter \href{https://weimarnetz.de/knotenkarte}{https://weimarnetz.de/knotenkarte}.
 
 \paragraph{Was kostet Freifunk?}
 Für die Nutzung fallen für Dich keine Kosten an. Die Infrastruktur wird ausschließlich über Spenden finanziert.
 
 Falls Du selbst einen Freifunk-Zugang anbieten möchtest, benötigst Du einen eigenen Internetanschluss und einen passenden Router. Dieser kostet je nach Modell ab ca. 35€.  Neben den Stromkosten für das Betreiben des Routers fallen keine weitere Kosten an.
 
-\paragraph{Wie weit reicht ein Freifunk-Knoten?} Freifunk nutzt ganz normales WLAN. Bei optimalen Bedingungen reicht das WLAN mehr als 100m weit. Jeder Gegenstand (Wand, Fenster, Baum, Mensch…) wirkt jedoch dämpfend auf das Signal. Praktisch reicht es oft zumindest bis in die Nachbarwohnung.
+\paragraph{Wie weit reicht ein Freifunk-Knoten?}
+Freifunk nutzt ganz normales WLAN. Bei optimalen Bedingungen reicht das WLAN mehr als 100m weit. Jeder Gegenstand (Wand, Fenster, Baum, Mensch…) wirkt jedoch dämpfend auf das Signal. Praktisch reicht es oft zumindest bis in die Nachbarwohnung.
 
-\paragraph{Ist das sicher?} Dein Freifunk-Knoten wird standardmäßig automatisch mit Updates versorgt. Außerdem kann man aus dem Freifunk-Netz nicht auf Dein privates Netz zugreifen.
+\paragraph{Ist das sicher?} \\
+Man kann aus dem Freifunk-Netz nicht auf Dein privates Netz zugreifen.
 
 Bei der Nutzung herrschen die gleichen Bedingungen wie in jedem anderen WLAN: Die Nutzer:innnen müssen verantwortlich damit umgehen. Das bedeutet u.a.: die eigenen Endgeräte (Handy, Laptop etc.) mit den üblichen Vorkehrungen vor Fremdzugriff zu schützen, Verschlüsselung \& https zu benutzen sowie regelmäßige Updates der Router und Endgeräte durchzuführen.
 
-\paragraph{Wo kann ich weitere Informationen finden?} Auf unserer Webseite \href{https://hamburg.freifunk.net}{https://hamburg.freifunk.net} und im Freifunk-Wiki unter \href{https://wiki.freifunk.net/Hamburg}{https://wiki.freifunk.net/Hamburg}.
+\paragraph{Wo kann ich weitere Informationen finden?}
+Auf unserer Webseite \href{https://weimarnetz.de}{https://weimarnetz.de} und auf den Seiten des ''Förderverein Freie Netzwerke e. V.'' unter \\\href{https://freifunk.net}{https://freifunk.net}.
 
 \newpage
 \begin{center}
@@ -172,11 +171,11 @@ Bei der Nutzung herrschen die gleichen Bedingungen wie in jedem anderen WLAN: Di
 \vfill
 \section{Kontakt}
 \begin{tabular}{ll}
-WWW & \href{https://hamburg.freifunk.net}{https://hamburg.freifunk.net}\\
-E-Mail & \href{mailto:kontakt@hamburg.freifunk.net}{kontakt@hamburg.freifunk.net}\\
+WWW & \href{https://weimarnetz.de}{https://weimarnetz.de}\\
+E-Mail & \href{mailto:kontakt@weimarnetz.de}{kontakt@weimarnetz.de}\\
         \\
-Treffen & 14-tägig Montags, online\\
-	& \href{https://hamburg.freifunk.net/kalender}{\small https://hamburg.freifunk.net/kalender}
+Treffen & dienstags, online\\
+	& \href{https://meet.weimarnetz.de/ImMaschinenraum}{\small https://meet.weimarnetz.de/ImMaschinenraum}
 \end{tabular}
 
 \end{document}
