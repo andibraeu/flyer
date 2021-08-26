@@ -8,7 +8,7 @@
 %% aus paperheight und der A4-Querformat-Höhe (210mm) die
 %% Beschnittzugabe oben und unten berechnet. (top, bottom, left und
 %% right sollten 0mm sein.)
-\usepackage[paperwidth=299mm,paperheight=212mm,
+\usepackage[paperwidth=303mm,paperheight=216mm,
 top=0mm,bottom=0mm,left=0mm,right=0mm]{geometry}
 %% Meine Druckerei wünschte "PDF/X4". Ich bin aber unsicher, ob pdfx
 %% überhaupt nützt.
@@ -21,7 +21,6 @@ top=0mm,bottom=0mm,left=0mm,right=0mm]{geometry}
 \usepackage[cmyk]{xcolor}
 \usepackage{tikz}
 \usepackage{calc}
-\usepackage[random]{blindtext}
 \usepackage{setspace,fontawesome} %fb and youtube icon
 \usepackage{titlesec}
 \graphicspath{{./bilder/}}
@@ -31,10 +30,10 @@ top=0mm,bottom=0mm,left=0mm,right=0mm]{geometry}
 %% Zeilenabstand
 \renewcommand\baselinestretch{1.1}
 %% Hintergrundfarbe
-%\definecolor{mybackground}{rgb}{.9094,.8924,.7204}
-%\pagecolor{mybackground}
-\definecolor{freifunkgelb}{RGB}{255,180,0}
-\definecolor{freifunkmagenta}{RGB}{220,0,103}
+\definecolor{mybackground}{cmyk}{0,0,0,0}
+\pagecolor{mybackground}
+\definecolor{freifunkgelb}{cmyk}{0,0.29,1,0}
+\definecolor{freifunkmagenta}{cmyk}{0,1,0.53,0.14}
 \titleformat*{\section}{\LARGE\bfseries\color{freifunkmagenta}\fontfamily{pag}}
 
 %% == HIER LÄNGEN DEFINIEREN ==
@@ -47,7 +46,7 @@ top=0mm,bottom=0mm,left=0mm,right=0mm]{geometry}
 %% berechnete Beschnittzugabe sein, damit die Markierungen nach dem
 %% Beschnitt nicht mehr sichtbar sind.
 \newlength{\fabst}
-\setlength{\fabst}{-2mm}
+\setlength{\fabst}{0mm}
 
 %% Berechnung von Längen. In der Regel sollte hier nichts geändert
 %% werden. \fzugh ist die horizontale Beschnittzugabe, \fzugv ist die
@@ -186,21 +185,21 @@ Auf unserer Webseite \href{https://weimarnetz.de}{https://weimarnetz.de} und auf
 
   %% SCHNEIDE- UND FALZMARKIERUNGEN
   %% Markierungen am unteren Seitenrand
-  \draw (  0mm,-1\fzugv) -- ( 00mm,-1\fabst);
-  \draw ( 97mm,-1\fzugv) -- ( 97mm,-1\fabst);
-  \draw (197mm,-1\fzugv) -- (197mm,-1\fabst);
-  \draw (297mm,-1\fzugv) -- (297mm,-1\fabst);
+  %\draw (  0mm,-1\fzugv) -- ( 00mm,-1\fabst);
+  %\draw ( 97mm,-1\fzugv) -- ( 97mm,-1\fabst);
+  %\draw (197mm,-1\fzugv) -- (197mm,-1\fabst);
+  %\draw (297mm,-1\fzugv) -- (297mm,-1\fabst);
   %% Markierungen am oberen Seitenrand
-  \draw (  0mm,209.85mm+\fabst) -- (  0mm,209.85mm+\fzugv);
-  \draw ( 97mm,209.85mm+\fabst) -- ( 97mm,209.85mm+\fzugv);
-  \draw (197mm,209.85mm+\fabst) -- (197mm,209.85mm+\fzugv);
-  \draw (297mm,209.85mm+\fabst) -- (297mm,209.85mm+\fzugv);
+  %\draw (  0mm,209.85mm+\fabst) -- (  0mm,209.85mm+\fzugv);
+  %\draw ( 97mm,209.85mm+\fabst) -- ( 97mm,209.85mm+\fzugv);
+  %\draw (197mm,209.85mm+\fabst) -- (197mm,209.85mm+\fzugv);
+  %\draw (297mm,209.85mm+\fabst) -- (297mm,209.85mm+\fzugv);
   %% Markierungen am linken Seitenrand
-  \draw (-1\fzugh,     0mm) -- (-1\fabst,     0mm);
-  \draw (-1\fzugh,209.85mm) -- (-1\fabst,209.85mm);
+  %\draw (-1\fzugh,     0mm) -- (-1\fabst,     0mm);
+  %\draw (-1\fzugh,209.85mm) -- (-1\fabst,209.85mm);
   %% Markierungen am rechten Seitenrand
-  \draw (297mm+\fabst,     0mm) -- (297mm+\fzugh,     0mm);
-  \draw (297mm+\fabst,209.85mm) -- (297mm+\fzugh,209.85mm);
+  %\draw (297mm+\fabst,     0mm) -- (297mm+\fzugh,     0mm);
+  %\draw (297mm+\fabst,209.85mm) -- (297mm+\fzugh,209.85mm);
 \end{tikzpicture}
 
 \pagebreak
@@ -294,21 +293,21 @@ Teste es am besten kurz und sage dann Deinen Nachbarn Bescheid!\par}
 
   %% SCHNEIDE- UND FALZMARKIERUNGEN
   %% Markierungen am unteren Seitenrand
-  \draw (  0mm,-1\fzugv) -- (  0mm,-1\fabst);
-  \draw (100mm,-1\fzugv) -- (100mm,-1\fabst);
-  \draw (200mm,-1\fzugv) -- (200mm,-1\fabst);
-  \draw (297mm,-1\fzugv) -- (297mm,-1\fabst);
+  %\draw (  0mm,-1\fzugv) -- (  0mm,-1\fabst);
+  %\draw (100mm,-1\fzugv) -- (100mm,-1\fabst);
+  %\draw (200mm,-1\fzugv) -- (200mm,-1\fabst);
+  %\draw (297mm,-1\fzugv) -- (297mm,-1\fabst);
   %% Markierungen am oberen Seitenrand
-  \draw (  0mm,209.85mm+\fabst) -- (  0mm,209.85mm+\fzugv);
-  \draw (100mm,209.85mm+\fabst) -- (100mm,209.85mm+\fzugv);
-  \draw (200mm,209.85mm+\fabst) -- (200mm,209.85mm+\fzugv);
-  \draw (297mm,209.85mm+\fabst) -- (297mm,209.85mm+\fzugv);
+  %\draw (  0mm,209.85mm+\fabst) -- (  0mm,209.85mm+\fzugv);
+  %\draw (100mm,209.85mm+\fabst) -- (100mm,209.85mm+\fzugv);
+  %\draw (200mm,209.85mm+\fabst) -- (200mm,209.85mm+\fzugv);
+  %\draw (297mm,209.85mm+\fabst) -- (297mm,209.85mm+\fzugv);
   %% Markierungen am linken Seitenrand
-  \draw (-1\fzugh,     0mm) -- (-1\fabst,     0mm);
-  \draw (-1\fzugh,209.85mm) -- (-1\fabst,209.85mm);
+  %\draw (-1\fzugh,     0mm) -- (-1\fabst,     0mm);
+  %\draw (-1\fzugh,209.85mm) -- (-1\fabst,209.85mm);
   %% Markierungen am rechten Seitenrand
-  \draw (297mm+\fabst,     0mm) -- (297mm+\fzugh,     0mm);
-  \draw (297mm+\fabst,209.85mm) -- (297mm+\fzugh,209.85mm);
+  %\draw (297mm+\fabst,     0mm) -- (297mm+\fzugh,     0mm);
+  %\draw (297mm+\fabst,209.85mm) -- (297mm+\fzugh,209.85mm);
 \end{tikzpicture}
 
 \end{document}
