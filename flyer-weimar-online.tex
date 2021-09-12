@@ -8,7 +8,7 @@
 %% aus paperheight und der A4-Querformat-Höhe (210mm) die
 %% Beschnittzugabe oben und unten berechnet. (top, bottom, left und
 %% right sollten 0mm sein.)
-\usepackage[paperwidth=303mm,paperheight=216mm,
+\usepackage[paperwidth=297mm,paperheight=210mm,
 top=0mm,bottom=0mm,left=0mm,right=0mm]{geometry}
 %% Meine Druckerei wünschte "PDF/X4". Ich bin aber unsicher, ob pdfx
 %% überhaupt nützt.
@@ -21,7 +21,6 @@ top=0mm,bottom=0mm,left=0mm,right=0mm]{geometry}
 \usepackage[cmyk]{xcolor}
 \usepackage{tikz}
 \usepackage{calc}
-\usepackage[random]{blindtext}
 \usepackage{setspace,fontawesome} %fb and youtube icon
 \usepackage{titlesec}
 \usepackage[gen]{eurosym}
@@ -116,22 +115,22 @@ top=0mm,bottom=0mm,left=0mm,right=0mm]{geometry}
   
   \node[breitespalte] at (\xar,15.9) {
     
-    {\fontsize{14}{16}\selectfont Wir bauen in Saalfeld ein freies und offenes WLAN-Netzwerk. Das Netzwerk kann von allen ohne Zugangsbeschränkungen genutzt werden. Weimarnetz in Saalfeld ist Teil der Freifunk-Initiative.
+    {\fontsize{14}{16}\selectfont Wir bauen in Weimar ein freies und offenes WLAN-Netzwerk. Das Netzwerk kann von allen ohne Zugangsbeschränkungen genutzt werden. Weimarnetz ist Teil der Freifunk-Initiative.
     
     Sei auch Du Teil des Weimarnetzes und stelle einen Router auf. Hilf, das Netzwerk zu vergrößern oder teile Deinen Internetzugang.\par}
   };
   
-  \node[anchor=center] at (\xar,5.3) { \includegraphics[width=60mm]{saalfeld-light.png}};
+  \node[anchor=center] at (\xar,5.3) { \includegraphics[width=60mm]{weimarnetz_logo.png}};
 
 
   %% AUßENSEITE MITTIG = RÜCKSEITE
-  \node[anchor=center] at (\xam,16.1) { \includegraphics[width=55mm]{saalfeld-light.png}};
+  \node[anchor=center] at (\xam,16.1) { \includegraphics[width=55mm]{weimarnetz_logo.png}};
   \node[anchor=center] at (\xam,9) { \includegraphics[width=40mm]{qr.png}};
   \node[anchor=center] at (\xam,6.8) { \footnotesize Dieser Flyer zum Download: https://weimarnetz.de/infoflyer};
   \node[breitespalte] at (\xam,4.5) {
     {\textcolor{freifunkmagenta}{\LARGE \textbf{Kontakt}}}\par
     \begin{tabular}{cl}
-{\fontsize{14}{90}\selectfont \faHome} & \href{https://saalfeld.freifunk.net}{https://saalfeld.freifunk.net}\\
+{\fontsize{14}{90}\selectfont \faHome} & \href{https://weimarnetz.de}{https://weimarnetz.de}\\
 {\fontsize{12}{90}\selectfont \faEnvelope} & \href{mailto:kontakt@weimarnetz.de}{kontakt@weimarnetz.de}\\
         \\
 {\fontsize{12}{90}\selectfont \faUsers} & dienstags ab 20 Uhr, M18 oder online\\
@@ -257,24 +256,23 @@ Sobald ein passendes Gerät beschafft wurde, kann die Firmware aufgespielt werde
 {\textcolor{freifunkmagenta}{\LARGE \textbf{3. Knoten einrichten}}\par}
 Danach richtet sich der Knoten selbstständig ein. Dieser Vorgang kann bis zu einer Stunde dauern.
 
-Damit ist die Registrierung abgeschlossen und Du kannst Deinen Freifunk-Router in Betrieb nehmen. Du solltest ein neues, offenes WLAN mit der SSID ''\mbox{\textit{Weimarnetz.Freifunk}}'' oder ''\mbox{\textit{weimarnetz.de | XXX}}'' sehen.\\
+Damit ist die Registrierung abgeschlossen und Du kannst Deinen Freifunk-Router in Betrieb nehmen.
+
+Du solltest ein neues, offenes WLAN mit der SSID ''\mbox{\textit{Weimarnetz.Freifunk}}'' oder ''\mbox{\textit{weimarnetz.de | XXX}}'' sehen.\\
 ''XXX'' steht hier für die Knotennummer Deines neuen Routers. Diese wurde bei der Einrichtung automatisch vergeben.
-
-Stelle  nun Deinen Router  in die Community Saalfeld.Freifunk. Folge dazu der Anleitung auf:
-https://wireless.subsignal.org/index.php?title=Firmware-Installation
-
+\\\\
 Teste es am besten kurz und sage dann Deinen Nachbarn Bescheid!\par}
   };
   
   \node[anchor=center] at (\xim,2.5) {%
-    \includegraphics[width=20mm]{saalfeld-qr.jpg}
+    \includegraphics[width=20mm]{Weimarnetz.Freifunk.qr.png}
   };
   
-  \node[anchor=center] at (\xim,1.2) { \footnotesize Verbinde Dich mit Saalfeld.Freifunk};
+  \node[anchor=center] at (\xim,1.2) { \footnotesize Verbinde Dich mit Weimarnetz.Freifunk};
 
   %% INNENSEITE RECHTS = SCHMALER, EINGEKLAPPT
   \node[anchor=center] at (\xir,17) {%
-    \includegraphics[width=30mm]{saalfeld-light.png}
+    \includegraphics[width=30mm]{weimarnetz_logo.png}
   };
   
   \node[schmalespalte,align=right] at (\xir,14.5) {%
