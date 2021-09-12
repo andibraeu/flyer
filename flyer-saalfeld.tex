@@ -1,0 +1,315 @@
+\documentclass[10pt]{article}
+%% == HIER PAPIERGRÖßE DEFINIEREN ==
+%% Aus der Papiergröße wird die Beschnittzugabe (auch "Überfüllung"
+%% genannt) berechnet. Hat beispielsweise paperwidth den Wert 307mm,
+%% so wird davon die A4-Querformat-Breite (297mm) abgezogen und die
+%% verbleibende Länge (10mm) halbiert, sodass sich auf beiden Seiten
+%% eine Beschnittzugabe von 5mm ergibt. Nach dem gleichen Prinzip wird
+%% aus paperheight und der A4-Querformat-Höhe (210mm) die
+%% Beschnittzugabe oben und unten berechnet. (top, bottom, left und
+%% right sollten 0mm sein.)
+\usepackage[paperwidth=303mm,paperheight=216mm,
+top=0mm,bottom=0mm,left=0mm,right=0mm]{geometry}
+%% Meine Druckerei wünschte "PDF/X4". Ich bin aber unsicher, ob pdfx
+%% überhaupt nützt.
+\usepackage[x-4]{pdfx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[cmyk]{xcolor}
+\usepackage{tikz}
+\usepackage{calc}
+\usepackage[random]{blindtext}
+\usepackage{setspace,fontawesome} %fb and youtube icon
+\usepackage{titlesec}
+\graphicspath{{./bilder/}}
+\pagestyle{empty}
+%% Damit tikzpicture nicht eingerückt wird:
+\setlength\parindent{0pt}
+%% Zeilenabstand
+\renewcommand\baselinestretch{1.1}
+%% Hintergrundfarbe
+\definecolor{mybackground}{cmyk}{0,0,0,0}
+\pagecolor{mybackground}
+\definecolor{freifunkgelb}{cmyk}{0,0.29,1,0}
+\definecolor{freifunkmagenta}{cmyk}{0,1,0.53,0.14}
+\titleformat*{\section}{\LARGE\bfseries\color{freifunkmagenta}\fontfamily{pag}}
+
+%% == HIER LÄNGEN DEFINIEREN ==
+%% \frand ist der Rand innerhalb jeder "Spalte", also der Abstand
+%% zwischen Text und Falz bzw. Papierrand.
+\newlength{\frand}
+\setlength{\frand}{8mm}
+%% \fabst ist der Abstand der Schnitt- und Falzmarkierungen zum Rand
+%% des Endformats. Der Wert sollte unbedingt kleiner als die
+%% berechnete Beschnittzugabe sein, damit die Markierungen nach dem
+%% Beschnitt nicht mehr sichtbar sind.
+\newlength{\fabst}
+\setlength{\fabst}{0mm}
+
+%% Berechnung von Längen. In der Regel sollte hier nichts geändert
+%% werden. \fzugh ist die horizontale Beschnittzugabe, \fzugv ist die
+%% vertikale Beschnittzugabe.
+\newlength{\fzugh}
+\setlength{\fzugh}{(\paperwidth-297mm)/2}
+\newlength{\fzugv}
+\setlength{\fzugv}{(\paperheight-210mm)/2}
+
+%% Folgende Längenbezeichnungen beginnen mit "x" (für X-Achse),
+%% gefolgt von "a" (für Außenseite) oder "i" (für Innenseite), gefolgt
+%% von "l" (für "links"), "m" (für "mittig") oder "r" (für
+%% rechts). Die eingeklappte "Spalte" ist 3mm schmaler als die anderen
+%% beiden "Spalten". Die Längen können für die Positionierung von
+%% Nodes genutzt werden. Sie sollten in der Regel nicht geändert
+%% werden.
+\newlength{\xal}\setlength{\xal}{48.5mm}
+\newlength{\xam}\setlength{\xam}{147mm}
+\newlength{\xar}\setlength{\xar}{247mm}
+\newlength{\xil}\setlength{\xil}{50mm}
+\newlength{\xim}\setlength{\xim}{150mm}
+\newlength{\xir}\setlength{\xir}{248.5mm}
+
+%% breitespalte ist der Stil für die nicht eingeklappten "Spalten"
+\tikzstyle{breitespalte}=[anchor=north,
+                          minimum width=(100mm-2\frand),
+                          text width=(100mm-2\frand),
+                          align=justify,
+                          font=\setlength{\parskip}{0.4\baselineskip}]
+%% schmalespalte ist der Stil für die eingeklappte "Spalte" (außen:
+%% links, innen: rechts)
+\tikzstyle{schmalespalte}=[anchor=north,
+                           minimum width=(97mm-2\frand),
+                           text width=(97mm-2\frand),
+                           align=justify,
+                           font=\setlength{\parskip}{0.4\baselineskip}]
+%% Fotoplatzhalter und Titel
+\tikzstyle{mitrahmen}=[anchor=north,
+                       draw,
+                       line width=.5mm,
+                       inner sep=5mm,
+                       font=\setlength{\parskip}{0.4\baselineskip}]
+
+\begin{document}
+
+%% Schriftart AvantGarde
+\fontfamily{pag}\fontseries{m}\fontshape{n}\selectfont
+
+%% AUßENSEITE
+\begin{tikzpicture}
+  %% Statt \clip verwenden wir die Option "use as bounding
+  %% box". Sollte in der Regel nicht geändert werden.
+  \draw[use as bounding box,draw opacity=0]
+  (-1\fzugh,-1\fzugv) grid (297mm+\fzugh,210mm+\fzugv-.15mm);
+  %% AUSSENSEITE RECHTS = VORDERSEITE
+  \node at (\xar,18.5) {
+	{\fontsize{70}{90}\selectfont \faWifi}
+  };
+  \node at (\xar,16.5) {
+	{\fontsize{30}{40}\selectfont Teilt\ Eure WLANs!}
+  };
+
+
+  
+  \node[breitespalte] at (\xar,15.9) {
+    
+    {\fontsize{14}{16}\selectfont Wir bauen in Saalfeld ein freies und offenes WLAN-Netzwerk. Das Netzwerk kann von allen ohne Zugangsbeschränkungen genutzt werden. Weimarnetz in Saalfeld ist Teil der Freifunk-Initiative.
+    
+    Sei auch Du Teil des Weimarnetzes und stelle einen Router auf. Hilf, das Netzwerk zu vergrößern oder teile Deinen Internetzugang.\par}
+  };
+  
+  \node[anchor=center] at (\xar,5.3) { \includegraphics[width=60mm]{saalfeld-light.png}};
+
+
+  %% AUßENSEITE MITTIG = RÜCKSEITE
+  \node[anchor=center] at (\xam,16.1) { \includegraphics[width=55mm]{saalfeld-light.png}};
+  \node[anchor=center] at (\xam,9) { \includegraphics[width=40mm]{qr.png}};
+  \node[anchor=center] at (\xam,6.8) { \footnotesize Dieser Flyer zum Download: https://weimarnetz.de/infoflyer};
+  \node[breitespalte] at (\xam,4.5) {
+    {\textcolor{freifunkmagenta}{\LARGE \textbf{Kontakt}}}\par
+    \begin{tabular}{cl}
+{\fontsize{14}{90}\selectfont \faHome} & \href{https://saalfeld.freifunk.net}{https://saalfeld.freifunk.net}\\
+{\fontsize{12}{90}\selectfont \faEnvelope} & \href{mailto:kontakt@weimarnetz.de}{kontakt@weimarnetz.de}\\
+        \\
+{\fontsize{12}{90}\selectfont \faUsers} & dienstags ab 20 Uhr, M18 oder online\\
+	& \href{https://meet.weimarnetz.de/ImMaschinenraum}{\footnotesize https://meet.weimarnetz.de/ImMaschinenraum}
+\end{tabular}
+  };
+
+  %% AUßENSEITE LINKS = SCHMALER, EINGEKLAPPT
+  \node[schmalespalte] at (\xal,19.5) {
+    {\textcolor{freifunkmagenta}{\LARGE \textbf{Häufige Fragen}}}\par
+\setlength{\parskip}{0.0em}
+{\fontsize{9}{11}\selectfont 
+\vspace{1em}
+\textbf{Wo stehen schon Freifunk-Router?}
+Eine Karte findest Du unter \href{https://weimarnetz.de/knotenkarte}{https://weimarnetz.de/knotenkarte}.
+
+\vspace{1em}
+\textbf{Was kostet Freifunk?}
+Für die Nutzung fallen für Dich keine Kosten an. Die Infrastruktur wird ausschließlich über Spenden finanziert.
+
+Falls Du selbst einen Freifunk-Zugang anbieten möchtest, benötigst Du einen eigenen Internetanschluss und einen passenden Router. Dieser kostet je nach Modell ab ca. 35€.  Neben den Stromkosten für das Betreiben des Routers fallen keine weiteren Kosten an.
+
+\vspace{1em}
+\textbf{Wie weit reicht ein Freifunk-Knoten?}
+Freifunk nutzt ganz normales WLAN. Bei optimalen Bedingungen reicht das WLAN mehr als 100m weit. Jeder Gegenstand (Wand, Fenster, Baum, Mensch…) wirkt jedoch dämpfend auf das Signal. Praktisch reicht es oft zumindest bis in die Nachbarwohnung.
+
+\vspace{1em}
+\textbf{Ist das sicher?}
+Andere können aus dem Freifunk-Netz nicht auf Dein privates Netz zugreifen.
+
+Bei der Nutzung herrschen die gleichen Bedingungen wie in jedem anderen WLAN: Die Nutzer:innnen müssen verantwortlich damit umgehen. Das bedeutet u.~a., die eigenen Endgeräte (Handy, Laptop etc.) mit den üblichen Vorkehrungen vor Fremdzugriff zu schützen, Verschlüsselung und https zu benutzen sowie regelmäßige Updates der Router und Endgeräte durchzuführen.
+
+\vspace{1em}
+\textbf{Wo kann ich weitere Informationen finden?}
+Auf unserer Webseite \href{https://weimarnetz.de}{https://weimarnetz.de} und auf den Seiten des \textit{Förderverein Freie Netzwerke e.~V.} unter\\\href{https://freifunk.net}{https://freifunk.net}.\par}
+  };
+ 
+
+  %% Grid (1cm x 1cm) für die einzelnen "Spalten". Sollte vor
+  %% Erstellen der druckfertigen Version entfernt werden.
+ %\draw[color=red  ,draw opacity=.5] (0,0) grid (9.7,20.985);
+ %\draw[color=blue ,draw opacity=.5,shift={(-3mm,0)}]
+ %( 97mm+3mm-.01mm,0) grid (197mm+3mm,20.985);
+ %\draw[color=green,draw opacity=.5,shift={(-3mm,0)}]
+ %(197mm+3mm-.01mm,0) grid (297mm+3mm,20.985);
+
+  %% Gelber Streifen oben
+  \node[fill=freifunkgelb,minimum width=32cm,minimum height=2cm,
+        text width=32cm,align=center] at (297mm/2,21.1) {};
+        
+  %% Gelber Streifen unten
+  \node[fill=freifunkgelb,minimum width=20cm,minimum height=1.9cm,
+        text width=20.1cm,align=right] at (397mm/2,0.0) {};
+
+  %% SCHNEIDE- UND FALZMARKIERUNGEN
+  %% Markierungen am unteren Seitenrand
+  %\draw (  0mm,-1\fzugv) -- ( 00mm,-1\fabst);
+  %\draw ( 97mm,-1\fzugv) -- ( 97mm,-1\fabst);
+  %\draw (197mm,-1\fzugv) -- (197mm,-1\fabst);
+  %\draw (297mm,-1\fzugv) -- (297mm,-1\fabst);
+  %% Markierungen am oberen Seitenrand
+  %\draw (  0mm,209.85mm+\fabst) -- (  0mm,209.85mm+\fzugv);
+  %\draw ( 97mm,209.85mm+\fabst) -- ( 97mm,209.85mm+\fzugv);
+  %\draw (197mm,209.85mm+\fabst) -- (197mm,209.85mm+\fzugv);
+  %\draw (297mm,209.85mm+\fabst) -- (297mm,209.85mm+\fzugv);
+  %% Markierungen am linken Seitenrand
+  %\draw (-1\fzugh,     0mm) -- (-1\fabst,     0mm);
+  %\draw (-1\fzugh,209.85mm) -- (-1\fabst,209.85mm);
+  %% Markierungen am rechten Seitenrand
+  %\draw (297mm+\fabst,     0mm) -- (297mm+\fzugh,     0mm);
+  %\draw (297mm+\fabst,209.85mm) -- (297mm+\fzugh,209.85mm);
+\end{tikzpicture}
+
+\pagebreak
+
+%% INNENSEITE
+\begin{tikzpicture}
+  %% Statt \clip verwenden wir die Option "use as bounding
+  %% box". Sollte in der Regel nicht geändert werden.
+  \draw[use as bounding box,draw opacity=0]
+  (-1\fzugh,-1\fzugv) grid (297mm+\fzugh,210mm+\fzugv-.15mm);
+
+  %% INNENSEITE LINKS
+  \node[breitespalte] at (\xil,19.5) {
+    {\fontsize{9}{11}\selectfont 
+    {\textcolor{freifunkmagenta}{\LARGE \textbf{Was ist Freifunk?}}\par}
+Freifunk ist eine nichtkommerzielle Initiative für freie Funk\-netzwerke. Wir bauen ein Gemeinschaftsnetz und stellen Anderen unsere Internetzugänge zur Verfügung. In diesem Flyer erfährst Du wie Du mitmachen kannst.
+
+Du brauchst keine besonderen technischen Kenntnisse, um Teil des Netzes zu werden. Es genügt, 1. ein passendes Gerät -- einen herkömmlichen WLAN-Router, den sog. Freifunk-Knoten -- zu kaufen, 2. die Freifunk-Firmware nach Anleitung aufzuspielen, 3. den Knoten einzurichten und 4. anzuschließen.
+
+% Alternativ kannst Du bei TODO ein fertig eingerichtetes Gerät abholen, das nur noch angeschlossen werden muss.
+
+\vspace{1em}
+{\textcolor{freifunkmagenta}{\LARGE \textbf{1. Gerät kaufen}}\par}
+Je nach Geldbeutel und Installationsort eignen sich verschiedene Geräte. Wir empfehlen an dieser Stelle zwei Geräte, die leicht eingerichtet werden können: den \textbf{TP-Link C6 v2} (ca. 40€) und den \textbf{TP-Link C60 v2} (ca. 45€).
+
+Grundsätzlich sind alle Geräte geeignet, die unter\\\href{https://www.weimarnetz.de/category/router}{https://www.weimarnetz.de/category/router} aufgeführt werden. Manche der dortigen Geräte gibt es in verschiedenen Hardware-Revisionen. Bitte achtet beim Kauf darauf. Nicht immer werden alle Revisionen von uns unterstützt.
+
+Sobald ein passendes Gerät beschafft wurde, kann die Firmware aufgespielt werden.
+
+\vspace{1em}
+{\textcolor{freifunkmagenta}{\LARGE \textbf{2. Firmware aufspielen}}\par}
+\textbf{TP-Link Geräte}
+\begin{enumerate}
+ \item Lade Dir zunächst die Erstinstallationsfirmware (factory) für Dein Gerät herunter:\\\href{https://weimarnetz.de/router/archer-c6}{https://weimarnetz.de/router/archer-c6}
+ \item Schließe den Router ans Stromnetz an. Warte bis die Power- und die WiFi-LED durchgehend leuchten.
+\end{enumerate}\par}
+  };
+
+  %% INNENSEITE MITTE
+  \node[breitespalte] at (\xim,20) {%
+    {\fontsize{9}{11}\selectfont \begin{enumerate}
+    \setcounter{enumi}{2}
+
+ \item Verbinde jetzt einen gelben Switchport mit dem Netzwerkanschluss Deines Computers und den blauen WAN-Port mit Deinem Internetrouter.
+ \item Öffne in einem Browserfenster die Adresse \textit{http://tplinkwifi.net/} oder \textit{http://192.168.0.1} und melde Dich mit \textit{admin} und dem Passwort \textit{admin} an.
+ \item Klicke links im Menü auf \textit{System Tools} und dann im Reiter \textit{Firmware Upgrades} auf \textit{Manual Upgrade}.
+ \item Wähle die gerade heruntergeladene Freifunk-Firmware über den Button \textit{Browse}. Klicke anschließend auf \textit{Upgrade}.
+ \item Nun warte etwas bis das Upgrade durchgelaufen ist und sich der Router selbstständig neu startet.
+\end{enumerate}
+
+\vspace{1em}
+{\textcolor{freifunkmagenta}{\LARGE \textbf{3. Knoten einrichten}}\par}
+Danach richtet sich der Knoten selbstständig ein. Dieser Vorgang kann bis zu einer Stunde dauern.
+
+Damit ist die Registrierung abgeschlossen und Du kannst Deinen Freifunk-Router in Betrieb nehmen. Du solltest ein neues, offenes WLAN mit der SSID ''\mbox{\textit{Weimarnetz.Freifunk}}'' oder ''\mbox{\textit{weimarnetz.de | XXX}}'' sehen.\\
+''XXX'' steht hier für die Knotennummer Deines neuen Routers. Diese wurde bei der Einrichtung automatisch vergeben.
+
+Stelle  nun Deinen Router  in die Community Saalfeld.Freifunk. Folge dazu der Anleitung auf:
+https://wireless.subsignal.org/index.php?title=Firmware-Installation
+
+Teste es am besten kurz und sage dann Deinen Nachbarn Bescheid!\par}
+  };
+  
+  \node[anchor=center] at (\xim,2.5) {%
+    \includegraphics[width=20mm]{saalfeld-qr.jpg}
+  };
+  
+  \node[anchor=center] at (\xim,1.2) { \footnotesize Verbinde Dich mit Saalfeld.Freifunk};
+
+  %% INNENSEITE RECHTS = SCHMALER, EINGEKLAPPT
+  \node[anchor=center] at (\xir,17) {%
+    \includegraphics[width=30mm]{saalfeld-light.png}
+  };
+  
+  \node[schmalespalte,align=right] at (\xir,14.5) {%
+    Stand: 09.2021
+  };
+  
+  \node[schmalespalte] at (\xir,12) {%
+  Raum für Notizen:
+  };
+
+  %% Gelber Streifen oben
+  \node[fill=freifunkgelb,minimum width=32cm,minimum height=2cm,
+        text width=32cm,align=center] at (297mm/2,21.1) {};
+
+  %% Grid (1cm x 1cm) für die einzelnen "Spalten". Sollte vor
+  %% Erstellen der druckfertigen Version entfernt werden.
+% \draw[color=red  ,draw opacity=.5] (0,0) grid (10,20.985);
+% \draw[color=blue ,draw opacity=.5] (100mm-.01mm,0) grid (200mm,20.985);
+% \draw[color=green,draw opacity=.5] (200mm-.01mm,0) grid (297mm,20.985);
+
+  %% SCHNEIDE- UND FALZMARKIERUNGEN
+  %% Markierungen am unteren Seitenrand
+  %\draw (  0mm,-1\fzugv) -- (  0mm,-1\fabst);
+  %\draw (100mm,-1\fzugv) -- (100mm,-1\fabst);
+  %\draw (200mm,-1\fzugv) -- (200mm,-1\fabst);
+  %\draw (297mm,-1\fzugv) -- (297mm,-1\fabst);
+  %% Markierungen am oberen Seitenrand
+  %\draw (  0mm,209.85mm+\fabst) -- (  0mm,209.85mm+\fzugv);
+  %\draw (100mm,209.85mm+\fabst) -- (100mm,209.85mm+\fzugv);
+  %\draw (200mm,209.85mm+\fabst) -- (200mm,209.85mm+\fzugv);
+  %\draw (297mm,209.85mm+\fabst) -- (297mm,209.85mm+\fzugv);
+  %% Markierungen am linken Seitenrand
+  %\draw (-1\fzugh,     0mm) -- (-1\fabst,     0mm);
+  %\draw (-1\fzugh,209.85mm) -- (-1\fabst,209.85mm);
+  %% Markierungen am rechten Seitenrand
+  %\draw (297mm+\fabst,     0mm) -- (297mm+\fzugh,     0mm);
+  %\draw (297mm+\fabst,209.85mm) -- (297mm+\fzugh,209.85mm);
+\end{tikzpicture}
+
+\end{document}
